@@ -1,0 +1,240 @@
+{
+    "comercios": [
+        {
+            "nombre": "50 Friend's",
+            "logo": "logos/50Friends_logo.png"
+        },
+        {
+            "nombre": "For all Folks",
+            "logo": "logos/forAllFolks_logo.png"
+        },
+        {
+            "nombre": "Playtomic",
+            "logo": "logos/playrtomic_logo.png"
+        },
+        {
+            "nombre": "American Eagle",
+            "logo": "logos/americanEagle_logo.png"
+        },
+        {
+            "nombre": "Lenovo",
+            "logo": "logos/lenovo_logo.png"
+        },
+        {
+            "nombre": "Miniso",
+            "logo": "logos/miniso_logo.png"
+        },
+        {
+            "nombre": "The Home Depot",
+            "logo": "logos/theHomeDepot_logo.png"
+        },
+        {
+            "nombre": "Cyber-Florist",
+            "logo": "logos/cyberFlorist_logo.png"
+        },
+        {
+            "nombre": "Teikit",
+            "logo": "logos/teikitSushi_logo.png"
+        },
+        {
+            "nombre": "Porco Rosso",
+            "logo": "logos/porcoRosso_logo.png"
+        },
+        {
+            "nombre": "Steren",
+            "logo": "logos/steren_logo.png"
+        },
+        {
+            "nombre": "Sarelly Sarelly",
+            "logo": "logos/sarellySarelly_logo.png"
+        },
+        {
+            "nombre": "Mappa",
+            "logo": "logos/mappa_logo.png"
+        },
+        {
+            "nombre": "Fatburger",
+            "logo": "logos/fatburger_logo.png"
+        },
+        {
+            "nombre": "Blauverde",
+            "logo": "logos/blauverde_logo.png"
+        },
+        {
+            "nombre": "Lucky Sushi",
+            "logo": "logos/luckySushi_logo.png"
+        },
+        {
+            "nombre": "Super Naturista",
+            "logo": "logos/superNaturista_logo.png"
+        },
+        {
+            "nombre": "Nike",
+            "logo": "logos/nike_logo.png"
+        },
+        {
+            "nombre": "Lacoste",
+            "logo": "logos/lacoste_logo.png"
+        },
+        {
+            "nombre": "Exakta Laboratorios",
+            "logo": "logos/exakta_logo.png"
+        },
+        {
+            "nombre": "Valdez Baluarte",
+            "logo": "logos/valdezBaluarte_logo.png"
+        },
+        {
+            "nombre": "Kinezis Fun",
+            "logo": "logos/kinezis_logo.png"
+        },
+        {
+            "nombre": "Bou Café",
+            "logo": "logos/BouCafe_logo.png"
+        },
+        {
+            "nombre": "Asador KM 11.8",
+            "logo": "logos/asadorKM11_logo.png"
+        },
+        {
+            "nombre": "Innovasport",
+            "logo": "logos/innovasport_logo.png"
+        },
+        {
+            "nombre": "BigBox",
+            "logo": "logos/bigbox_logo.png"
+        },
+        {
+            "nombre": "Meroma",
+            "logo": "logos/meroma_logo.png"
+        },
+        {
+            "nombre": "El Tizoncito",
+            "logo": "logos/elTizoncito_logo.png"
+        },
+        {
+            "nombre": "Luuna",
+            "logo": "logos/luuna_logo.png"
+        },
+        {
+            "nombre": "HP",
+            "logo": "logos/hp_logo.png"
+        },
+        {
+            "nombre": "LG",
+            "logo": "logos/LG_logo.png"
+        },
+        {
+            "nombre": "weloveburgers",
+            "logo": "logos/weLoveBurgers_logo.png"
+        },
+        {
+            "nombre": "La Casa de Toño",
+            "logo": "logos/laCasadeTono_logo.png"
+        },
+        {
+            "nombre": "Click Bus",
+            "logo": "logos/clicBus_logo.png"
+        },
+        {
+            "nombre": "Diri Telecomunicaciones",
+            "logo": "logos/diriTelecomunicaciones_logo.png"
+        },
+        {
+            "nombre": "Jüsto",
+            "logo": "logos/Justo_logo.png"
+        },
+        {
+            "nombre": "Booking",
+            "logo": "logos/booking_logo.png"
+        },
+        {
+            "nombre": "Glitzi",
+            "logo": "logos/glitzi_logo.png"
+        },
+        {
+            "nombre": "Elevaté Botánica",
+            "logo": "logos/elevateBotanica_logo.png"
+        },
+        {
+            "nombre": "Centro Veterinario Raven",
+            "logo": "logos/centroVeterinarioRaven_logo.png"
+        },
+        {
+            "nombre": "Mobbit",
+            "logo": "logos/mobbit_logo.png"
+        },
+        {
+            "nombre": "Hacienda 1800",
+            "logo": "logos/hacienda1800_logo.png"
+        },
+        {
+            "nombre": "Stradivarius",
+            "logo": "logos/stradivarius_logo.png"
+        },
+        {
+            "nombre": "The Luxury Closet",
+            "logo": "logos/theLuxuryCloset_logo.png"
+        },
+        {
+            "nombre": "Forest Essentials",
+            "logo": "logos/forestEssentials_logo.png"
+        },
+        {
+            "nombre": "Italo Jewlry",
+            "logo": "logos/italoJewelry_logo.png"
+        },
+        {
+            "nombre": "Whirlpool",
+            "logo": "logos/whirlpool_logo.png"
+        },
+        {
+            "nombre": "Innvictus",
+            "logo": "logos/innvictus_logo.png"
+        },
+        {
+            "nombre": "Honor",
+            "logo": "logos/honor_logo.png"
+        },
+        {
+            "nombre": "Xcaret",
+            "logo": "logos/xcaret_logo.png"
+        },
+        {
+            "nombre": "123 Loterias",
+            "logo": "logos/loterias_logo.png"
+        },
+        {
+            "nombre": "DRY Clean USA",
+            "logo": "logos/dryCleanUsa_logo.png"
+        },
+        {
+            "nombre": "Pandora",
+            "logo": "logos/pandora_logo.png"
+        },
+        {
+            "nombre": "Barceló Hotel",
+            "logo": "logos/barcelo_logo.png"
+        },
+        {
+            "nombre": "Domestika",
+            "logo": "logos/domestika_logo.png"
+        },
+        {
+            "nombre": "Etam",
+            "logo": "logos/etam_logo.png"
+        },
+        {
+            "nombre": "Levis",
+            "logo": "logos/levis_logo.png"
+        },
+        {
+            "nombre": "Samsonite",
+            "logo": "logos/samsonite _logo.png"
+        },
+        {
+            "nombre": "Samsung",
+            "logo": "logos/samsung_logo.png"
+        }
+    ]
+}
