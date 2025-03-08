@@ -1,5 +1,4 @@
 import streamlit as st
-import pyperclip
 import openai
 import os
 import json
@@ -44,6 +43,7 @@ st.markdown("""
         }
         div.stButton > button:hover {
             background-color: #021666;
+            color: white;
         }
 
         /* Cambia el fondo de la app */
@@ -77,6 +77,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# Configurar manualmente la clave API (solo para pruebas locales)
+# os.environ["OPENAI_API_KEY"] = ""
 api_key = os.getenv("OPENAI_API_KEY")
 
 if not api_key:
@@ -87,28 +89,42 @@ print("API Key cargada:", api_key)
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
-def generar_copy(comercio, recompensa_bienvenida, recompensa_recurrente, categoria, banco, ejemplo_copy, limite_caracteres):
-    max_tokens = limite_caracteres // 4
-    prompt = f"""
-    Genera 3 copys publicitarios atractivos para una promoción de un comercio.
-    Comercio: {comercio}
-    Recompensa de Bienvenida: {recompensa_bienvenida}
-    Recompensa Recurrente: {recompensa_recurrente}
-    Categoría: {categoria}
-    Banco asociado: {banco}
-    Ejemplo de copy deseado: {ejemplo_copy}
 
-    Los copys deben ser breves, persuasivos y adecuados para redes sociales en México.
-    """
+
+
+def generar_copy(comercio, recompensa_bienvenida, recompensa_recurrente, categoria, banco, ejemplo_copy, limite_caracteres):
+    prompt = f"""
+    Genera exactamente 3 copys publicitarios atractivos para una promoción de un comercio.
     
+    - Cada copy debe tener un máximo de {limite_caracteres} caracteres.
+    - No los numeres ni los separes con guiones, deben estar separados por saltos de línea.
+    - Deben ser breves, persuasivos y adecuados para redes sociales en México.
+    
+    Información del comercio:
+    - Comercio: {comercio}
+    - Recompensa de Bienvenida: {recompensa_bienvenida}
+    - Recompensa Recurrente: {recompensa_recurrente}
+    - Categoría: {categoria}
+    - Banco asociado: {banco}
+    
+    Ejemplo de copy deseado:
+    {ejemplo_copy}
+
+    Por favor, respeta estrictamente el límite de caracteres en cada copy y no devuelvas otro contenido que no sean los 3 copys.
+    """
+
+    # Aproximación para convertir caracteres a tokens
+    max_tokens = (limite_caracteres // 4) * 3  
+
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
-        max_tokens=max_tokens
+        max_tokens=max_tokens  
     )
-    
-    copies = response.choices[0].message.content.split("\n")
-    return [copy for copy in copies if copy.strip()][:3]
+
+    # Separar los copys generados asegurando que sean 3 y respetando el límite de caracteres
+    copies = response.choices[0].message.content.strip().split("\n")
+    return [copy.strip()[:limite_caracteres] for copy in copies if copy.strip()][:3]
 
 
 
@@ -142,13 +158,12 @@ with col1:
     if comercio_info:
         st.image(comercio_info["logo"], width=80, use_container_width=True)
 
-
+      
 if "copies_generados" in st.session_state:
     copies_generados = st.session_state["copies_generados"]
     st.write("### Copys Generados:")
     st.markdown('<hr class="custom-divider">', unsafe_allow_html=True)
+    
     for copy in copies_generados:
         st.code(copy)
-        if st.button("Copiar", key=copy):
-            pyperclip.copy(copy)
-            st.success("Texto copiado al portapapeles!")
+        
