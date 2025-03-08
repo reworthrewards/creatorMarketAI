@@ -4,6 +4,32 @@ import openai
 import os
 import json
 
+import streamlit as st
+
+# Código de acceso predefinido
+ACCESO_PERMITIDO = "prueba"
+
+# Si la autenticación aún no se ha realizado
+if "autenticado" not in st.session_state:
+    st.session_state["autenticado"] = False
+
+# Si el usuario aún no está autenticado, mostrar solo el input del código
+if not st.session_state["autenticado"]:
+    st.title("Acceso Restringido")
+    clave = st.text_input("Ingresa el código de acceso:", type="password")
+
+    if clave == ACCESO_PERMITIDO:
+        st.session_state["autenticado"] = True
+        st.rerun()  # 🔄 Recarga la app después de autenticarse correctamente
+    elif clave:
+        st.error("Código incorrecto. Inténtalo de nuevo.")
+
+    # 🔴 Detiene la ejecución aquí y NO muestra el resto de la app
+    st.stop()
+
+# 🟢 Si el código es correcto, muestra la app normalmente
+st.title("Generador de Creativos para Promociones")
+
 st.markdown("""
     <style>
         /* Cambia el color del botón */
@@ -89,7 +115,6 @@ try:
 except FileNotFoundError:
     comercios = []
 
-st.title("Generador de Creativos para Promociones")
 st.divider()
 
 # Extraer solo los nombres de los comercios
