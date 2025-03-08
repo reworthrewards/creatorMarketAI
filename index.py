@@ -77,7 +77,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-client = openai.Client(api_key=os.getenv("OPENAI_API_KEY"))
+client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 def generar_copy(comercio, recompensa_bienvenida, recompensa_recurrente, categoria, banco, ejemplo_copy, limite_caracteres):
