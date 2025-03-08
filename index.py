@@ -77,9 +77,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-client = openai.Client(api_key=os.getenv("sk-bysSeAbra_rqs9gtdes4NN9NL4UTX-nyc_Jq4VpyceT3BlbkFJF28-8WxZZxa4srQqyloHunWCHbiF223dYwAt5-MAYA"))
-
-client = openai.Client(api_key="sk-bysSeAbra_rqs9gtdes4NN9NL4UTX-nyc_Jq4VpyceT3BlbkFJF28-8WxZZxa4srQqyloHunWCHbiF223dYwAt5-MAYA")
+client = openai.Client(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 def generar_copy(comercio, recompensa_bienvenida, recompensa_recurrente, categoria, banco, ejemplo_copy, limite_caracteres):
