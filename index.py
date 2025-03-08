@@ -77,6 +77,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+api_key = os.getenv("OPENAI_API_KEY")
+
+if not api_key:
+    raise ValueError("⚠️ ERROR: No se encontró OPENAI_API_KEY en las variables de entorno.")
+
+print("API Key cargada:", api_key)
+
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
