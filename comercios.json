@@ -2,239 +2,302 @@
     "comercios": [
         {
             "nombre": "50 Friend's",
-            "logo": "logos/50Friends_logo.png"
+            "logo": "logos/50Friends_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "For all Folks",
-            "logo": "logos/forAllFolks_logo.png"
+            "logo": "logos/forAllFolks_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Playtomic",
-            "logo": "logos/playrtomic_logo.png"
+            "logo": "logos/playrtomic_logo.png",
+            "categoria": "Deportes"
         },
         {
             "nombre": "American Eagle",
-            "logo": "logos/americanEagle_logo.png"
+            "logo": "logos/americanEagle_logo.png",
+            "categoria": "Moda"
         },
         {
             "nombre": "Lenovo",
-            "logo": "logos/lenovo_logo.png"
+            "logo": "logos/lenovo_logo.png",
+            "categoria": "Tecnología"
         },
         {
             "nombre": "Miniso",
-            "logo": "logos/miniso_logo.png"
+            "logo": "logos/miniso_logo.png",
+            "categoria": "Moda"
         },
         {
             "nombre": "The Home Depot",
-            "logo": "logos/theHomeDepot_logo.png"
+            "logo": "logos/theHomeDepot_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Cyber-Florist",
-            "logo": "logos/cyberFlorist_logo.png"
+            "logo": "logos/cyberFlorist_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Teikit",
-            "logo": "logos/teikitSushi_logo.png"
+            "logo": "logos/teikitSushi_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Porco Rosso",
-            "logo": "logos/porcoRosso_logo.png"
+            "logo": "logos/porcoRosso_logo.png",
+            "categoria": "Restaurantes",
+            "imagenes_referencia": [
+                "logos/PorcoRosso_1.jpg.png",
+                "logos/PorcoRosso_2.jpg.png"
+            ]
         },
         {
             "nombre": "Steren",
-            "logo": "logos/steren_logo.png"
+            "logo": "logos/steren_logo.png",
+            "categoria": "Tecnología"
         },
         {
             "nombre": "Sarelly Sarelly",
-            "logo": "logos/sarellySarelly_logo.png"
+            "logo": "logos/sarellySarelly_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Mappa",
-            "logo": "logos/mappa_logo.png"
+            "logo": "logos/mappa_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Fatburger",
-            "logo": "logos/fatburger_logo.png"
+            "logo": "logos/fatburger_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Blauverde",
-            "logo": "logos/blauverde_logo.png"
+            "logo": "logos/blauverde_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Lucky Sushi",
-            "logo": "logos/luckySushi_logo.png"
+            "logo": "logos/luckySushi_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Super Naturista",
-            "logo": "logos/superNaturista_logo.png"
+            "logo": "logos/superNaturista_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Nike",
-            "logo": "logos/nike_logo.png"
+            "logo": "logos/nike_logo.png",
+            "categoria": "Deportes"
         },
         {
             "nombre": "Lacoste",
-            "logo": "logos/lacoste_logo.png"
+            "logo": "logos/lacoste_logo.png",
+            "categoria": "Moda"
         },
         {
             "nombre": "Exakta Laboratorios",
-            "logo": "logos/exakta_logo.png"
+            "logo": "logos/exakta_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Valdez Baluarte",
-            "logo": "logos/valdezBaluarte_logo.png"
+            "logo": "logos/valdezBaluarte_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Kinezis Fun",
-            "logo": "logos/kinezis_logo.png"
+            "logo": "logos/kinezis_logo.png",
+            "categoria": "Deportes"
         },
         {
             "nombre": "Bou Café",
-            "logo": "logos/BouCafe_logo.png"
+            "logo": "logos/BouCafe_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Asador KM 11.8",
-            "logo": "logos/asadorKM11_logo.png"
+            "logo": "logos/asadorKM11_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Innovasport",
-            "logo": "logos/innovasport_logo.png"
+            "logo": "logos/innovasport_logo.png",
+            "categoria": "Deportes"
         },
         {
             "nombre": "BigBox",
-            "logo": "logos/bigbox_logo.png"
+            "logo": "logos/bigbox_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Meroma",
-            "logo": "logos/meroma_logo.png"
+            "logo": "logos/meroma_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "El Tizoncito",
-            "logo": "logos/elTizoncito_logo.png"
+            "logo": "logos/elTizoncito_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Luuna",
-            "logo": "logos/luuna_logo.png"
+            "logo": "logos/luuna_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "HP",
-            "logo": "logos/hp_logo.png"
+            "logo": "logos/hp_logo.png",
+            "categoria": "Tecnología"
         },
         {
             "nombre": "LG",
-            "logo": "logos/LG_logo.png"
+            "logo": "logos/LG_logo.png",
+            "categoria": "Tecnología"
         },
         {
             "nombre": "weloveburgers",
-            "logo": "logos/weLoveBurgers_logo.png"
+            "logo": "logos/weLoveBurgers_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "La Casa de Toño",
-            "logo": "logos/laCasadeTono_logo.png"
+            "logo": "logos/laCasadeTono_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Click Bus",
-            "logo": "logos/clicBus_logo.png"
+            "logo": "logos/clicBus_logo.png",
+            "categoria": "Viajes"
         },
         {
             "nombre": "Diri Telecomunicaciones",
-            "logo": "logos/diriTelecomunicaciones_logo.png"
+            "logo": "logos/diriTelecomunicaciones_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Jüsto",
-            "logo": "logos/Justo_logo.png"
+            "logo": "logos/Justo_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Booking",
-            "logo": "logos/booking_logo.png"
+            "logo": "logos/booking_logo.png",
+            "categoria": "Viajes"
         },
         {
             "nombre": "Glitzi",
-            "logo": "logos/glitzi_logo.png"
+            "logo": "logos/glitzi_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Elevaté Botánica",
-            "logo": "logos/elevateBotanica_logo.png"
+            "logo": "logos/elevateBotanica_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Centro Veterinario Raven",
-            "logo": "logos/centroVeterinarioRaven_logo.png"
+            "logo": "logos/centroVeterinarioRaven_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Mobbit",
-            "logo": "logos/mobbit_logo.png"
+            "logo": "logos/mobbit_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Hacienda 1800",
-            "logo": "logos/hacienda1800_logo.png"
+            "logo": "logos/hacienda1800_logo.png",
+            "categoria": "Restaurantes"
         },
         {
             "nombre": "Stradivarius",
-            "logo": "logos/stradivarius_logo.png"
+            "logo": "logos/stradivarius_logo.png",
+            "categoria": "Moda"
         },
         {
             "nombre": "The Luxury Closet",
-            "logo": "logos/theLuxuryCloset_logo.png"
+            "logo": "logos/theLuxuryCloset_logo.png",
+            "categoria": "Moda"
         },
         {
             "nombre": "Forest Essentials",
-            "logo": "logos/forestEssentials_logo.png"
+            "logo": "logos/forestEssentials_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Italo Jewlry",
-            "logo": "logos/italoJewelry_logo.png"
+            "logo": "logos/italoJewelry_logo.png",
+            "categoria": "Moda"
         },
         {
             "nombre": "Whirlpool",
-            "logo": "logos/whirlpool_logo.png"
+            "logo": "logos/whirlpool_logo.png",
+            "categoria": "Tecnología"
         },
         {
             "nombre": "Innvictus",
-            "logo": "logos/innvictus_logo.png"
+            "logo": "logos/innvictus_logo.png",
+            "categoria": "Deportes"
         },
         {
             "nombre": "Honor",
-            "logo": "logos/honor_logo.png"
+            "logo": "logos/honor_logo.png",
+            "categoria": "Tecnología"
         },
         {
             "nombre": "Xcaret",
-            "logo": "logos/xcaret_logo.png"
+            "logo": "logos/xcaret_logo.png",
+            "categoria": "Viajes"
         },
         {
             "nombre": "123 Loterias",
-            "logo": "logos/loterias_logo.png"
+            "logo": "logos/loterias_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "DRY Clean USA",
-            "logo": "logos/dryCleanUsa_logo.png"
+            "logo": "logos/dryCleanUsa_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Pandora",
-            "logo": "logos/pandora_logo.png"
+            "logo": "logos/pandora_logo.png",
+            "categoria": "Moda"
         },
         {
             "nombre": "Barceló Hotel",
-            "logo": "logos/barcelo_logo.png"
+            "logo": "logos/barcelo_logo.png",
+            "categoria": "Viajes"
         },
         {
             "nombre": "Domestika",
-            "logo": "logos/domestika_logo.png"
+            "logo": "logos/domestika_logo.png",
+            "categoria": "Servicios"
         },
         {
             "nombre": "Etam",
-            "logo": "logos/etam_logo.png"
+            "logo": "logos/etam_logo.png",
+            "categoria": "Moda"
         },
         {
             "nombre": "Levis",
-            "logo": "logos/levis_logo.png"
+            "logo": "logos/levis_logo.png",
+            "categoria": "Moda"
         },
         {
             "nombre": "Samsonite",
-            "logo": "logos/samsonite _logo.png"
+            "logo": "logos/samsonite _logo.png",
+            "categoria": "Moda"
         },
         {
             "nombre": "Samsung",
-            "logo": "logos/samsung_logo.png"
+            "logo": "logos/samsung_logo.png",
+            "categoria": "Tecnología"
         }
     ]
 }
