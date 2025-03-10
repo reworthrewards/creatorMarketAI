@@ -8,7 +8,7 @@
         {
             "nombre": "For all Folks",
             "logo": "logos/forAllFolks_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Belleza"
         },
         {
             "nombre": "Playtomic",
@@ -38,12 +38,12 @@
         {
             "nombre": "Cyber-Florist",
             "logo": "logos/cyberFlorist_logo.png",
-            "categoria": "Servicios"
+            "categoria": "Floristería"
         },
         {
             "nombre": "Teikit",
             "logo": "logos/teikitSushi_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Restaurantes Sushi"
         },
         {
             "nombre": "Porco Rosso",
@@ -62,37 +62,37 @@
         {
             "nombre": "Sarelly Sarelly",
             "logo": "logos/sarellySarelly_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Moda"
         },
         {
             "nombre": "Mappa",
             "logo": "logos/mappa_logo.png",
-            "categoria": "Servicios"
+            "categoria": "Accesorios de viaje"
         },
         {
             "nombre": "Fatburger",
             "logo": "logos/fatburger_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Restaurantes Hamburguesas"
         },
         {
             "nombre": "Blauverde",
             "logo": "logos/blauverde_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Belleza"
         },
         {
             "nombre": "Lucky Sushi",
             "logo": "logos/luckySushi_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Restaurantes Sushi"
         },
         {
             "nombre": "Super Naturista",
             "logo": "logos/superNaturista_logo.png",
-            "categoria": "Servicios"
+            "categoria": "Productos naturales y bienestar"
         },
         {
             "nombre": "Nike",
             "logo": "logos/nike_logo.png",
-            "categoria": "Deportes"
+            "categoria": "Moda Deporte"
         },
         {
             "nombre": "Lacoste",
@@ -102,12 +102,12 @@
         {
             "nombre": "Exakta Laboratorios",
             "logo": "logos/exakta_logo.png",
-            "categoria": "Servicios"
+            "categoria": "Salud"
         },
         {
             "nombre": "Valdez Baluarte",
             "logo": "logos/valdezBaluarte_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Muebleria"
         },
         {
             "nombre": "Kinezis Fun",
@@ -117,7 +117,7 @@
         {
             "nombre": "Bou Café",
             "logo": "logos/BouCafe_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Restaurantes Cafeteria"
         },
         {
             "nombre": "Asador KM 11.8",
@@ -127,12 +127,12 @@
         {
             "nombre": "Innovasport",
             "logo": "logos/innovasport_logo.png",
-            "categoria": "Deportes"
+            "categoria": "Moda Deporte"
         },
         {
             "nombre": "BigBox",
             "logo": "logos/bigbox_logo.png",
-            "categoria": "Servicios"
+            "categoria": "Regalos"
         },
         {
             "nombre": "Meroma",
@@ -147,7 +147,7 @@
         {
             "nombre": "Luuna",
             "logo": "logos/luuna_logo.png",
-            "categoria": "Servicios"
+            "categoria": "Colchones"
         },
         {
             "nombre": "HP",
@@ -162,12 +162,12 @@
         {
             "nombre": "weloveburgers",
             "logo": "logos/weLoveBurgers_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Restaurantes Hamburguesas"
         },
         {
             "nombre": "La Casa de Toño",
             "logo": "logos/laCasadeTono_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Restaurantes Comida Mexicana"
         },
         {
             "nombre": "Click Bus",
@@ -177,12 +177,12 @@
         {
             "nombre": "Diri Telecomunicaciones",
             "logo": "logos/diriTelecomunicaciones_logo.png",
-            "categoria": "Servicios"
+            "categoria": "Servicios Telefonia"
         },
         {
             "nombre": "Jüsto",
             "logo": "logos/Justo_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Supermercado en linea"
         },
         {
             "nombre": "Booking",
@@ -192,27 +192,27 @@
         {
             "nombre": "Glitzi",
             "logo": "logos/glitzi_logo.png",
-            "categoria": "Servicios"
+            "categoria": "Belleza"
         },
         {
             "nombre": "Elevaté Botánica",
             "logo": "logos/elevateBotanica_logo.png",
-            "categoria": "Servicios"
+            "categoria": "Belleza"
         },
         {
             "nombre": "Centro Veterinario Raven",
             "logo": "logos/centroVeterinarioRaven_logo.png",
-            "categoria": "Servicios"
+            "categoria": "Servicios Veterinarios"
         },
         {
             "nombre": "Mobbit",
             "logo": "logos/mobbit_logo.png",
-            "categoria": "Servicios"
+            "categoria": "Servicios Mudanza"
         },
         {
             "nombre": "Hacienda 1800",
             "logo": "logos/hacienda1800_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Viajes Hotel"
         },
         {
             "nombre": "Stradivarius",
@@ -227,12 +227,12 @@
         {
             "nombre": "Forest Essentials",
             "logo": "logos/forestEssentials_logo.png",
-            "categoria": "Servicios"
+            "categoria": "Joyeria"
         },
         {
             "nombre": "Italo Jewlry",
             "logo": "logos/italoJewelry_logo.png",
-            "categoria": "Moda"
+            "categoria": "Joyeria"
         },
         {
             "nombre": "Whirlpool",
@@ -252,7 +252,7 @@
         {
             "nombre": "Xcaret",
             "logo": "logos/xcaret_logo.png",
-            "categoria": "Viajes"
+            "categoria": "Viajes Entretenimiento"
         },
         {
             "nombre": "123 Loterias",
@@ -272,7 +272,7 @@
         {
             "nombre": "Barceló Hotel",
             "logo": "logos/barcelo_logo.png",
-            "categoria": "Viajes"
+            "categoria": "Viajes Hotel"
         },
         {
             "nombre": "Domestika",
