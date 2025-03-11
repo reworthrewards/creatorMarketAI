@@ -35,12 +35,8 @@ if not st.session_state["autenticado"]:
 st.markdown("""
     <style>
         div.stButton > button {
-            background-color: #2E58FF;
-            color: white !important;
-            font-weight: bold;
-            border-radius: 4px;
-            padding: 10px 20px;
             border: none;
+            border-radius: 4px;
             transition: background-color 0.3s;
         }
         div.stButton > button:hover {
@@ -190,6 +186,11 @@ except FileNotFoundError:
 #
 #
 st.title("Generador de Creativos para Promociones")
+# Botón para cerrar sesión
+if st.button("🔒 Cerrar sesión", type="secondary"):
+    st.session_state["autenticado"] = False
+    st.rerun()
+
 tab1, tab2, tab3 = st.tabs(["Copys", "Imágenes", "Pruebas"])
 
 with tab1:
@@ -217,7 +218,7 @@ with tab1:
         ejemplo_copy = st.text_input("Ejemplo de copy deseado", "¡Aprovecha nuestra oferta!")
         evento = st.text_input("Fiesta o evente a tener en cuenta", "Fiestas patrias")
         limite_caracteres = st.number_input("Límite de caracteres en la respuesta", min_value=50, max_value=500, value=200, step=10)
-        if st.button("Generar Creativo", type="primary", icon="🎉"):
+        if st.button("Generar Copys", type="primary", icon="🎉"):
             st.session_state["copies_generados"] = generar_copy(comercio_seleccionado, recompensa_bienvenida, recompensa_recurrente, categoria, banco, ejemplo_copy, limite_caracteres)
        # Buscar información del comercio seleccionado
 
@@ -263,7 +264,7 @@ with tab2:
         descripcion = st.text_area("📝 Añadir texto descriptivo para la generación de imágenes")
 
        # Botón para generar imágenes
-        if st.button("🎨 Generar Imagen"):
+        if st.button("🎨 Generar Imagen", type="primary"):
             with st.spinner("Generando imagen..."):
                 imagen_generada = generar_imagen_stability(descripcion, imagenes_referencia, imagenes_subidas)
 

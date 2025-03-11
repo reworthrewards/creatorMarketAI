@@ -3,12 +3,19 @@
         {
             "nombre": "50 Friend's",
             "logo": "logos/50Friends_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Restaurantes",
+            "imagenes_referencia": [
+                "logos/50Friends_1.png",
+                "logos/50Friends_2.png"
+            ]
         },
         {
             "nombre": "For all Folks",
             "logo": "logos/forAllFolks_logo.png",
-            "categoria": "Belleza"
+            "categoria": "Belleza",
+            "imagenes_referencia": [
+                "logos/forAllFolks_1.png"
+            ]
         },
         {
             "nombre": "Playtomic",
@@ -43,7 +50,11 @@
         {
             "nombre": "Teikit",
             "logo": "logos/teikitSushi_logo.png",
-            "categoria": "Restaurantes Sushi"
+            "categoria": "Restaurantes Sushi",
+            "imagenes_referencia": [
+                "logos/teikit_sushi_1.png",
+                "logos/teikit_2.png"
+            ]
         },
         {
             "nombre": "Porco Rosso",
@@ -57,37 +68,64 @@
         {
             "nombre": "Steren",
             "logo": "logos/steren_logo.png",
-            "categoria": "Tecnología"
+            "categoria": "Tecnología",
+            "imagenes_referencia": [
+                "logos/steren_1.png",
+                "logos/steren_2.png"
+            ]
         },
         {
             "nombre": "Sarelly Sarelly",
             "logo": "logos/sarellySarelly_logo.png",
-            "categoria": "Moda"
+            "categoria": "Moda",
+            "imagenes_referencia": [
+                "logos/steren_1.png",
+                "logos/steren_2.png"
+            ]
         },
         {
             "nombre": "Mappa",
             "logo": "logos/mappa_logo.png",
-            "categoria": "Accesorios de viaje"
+            "categoria": "Accesorios de viaje",
+            "imagenes_referencia": [
+                "logos/mappa_1.png",
+                "logos/mappa_2.png"
+            ]
         },
         {
             "nombre": "Fatburger",
             "logo": "logos/fatburger_logo.png",
-            "categoria": "Restaurantes Hamburguesas"
+            "categoria": "Restaurantes Hamburguesas",
+            "imagenes_referencia": [
+                "logos/fatburger_1.png",
+                "logos/fatburger_2.png"
+            ]
         },
         {
             "nombre": "Blauverde",
             "logo": "logos/blauverde_logo.png",
-            "categoria": "Belleza"
+            "categoria": "Belleza",
+            "imagenes_referencia": [
+                "logos/blauverde_1.png"
+            ]
         },
         {
             "nombre": "Lucky Sushi",
             "logo": "logos/luckySushi_logo.png",
-            "categoria": "Restaurantes Sushi"
+            "categoria": "Restaurantes Sushi",
+            "imagenes_referencia": [
+                "logos/luckySushi_2.png",
+                "logos/teikit_2.png"
+            ]
         },
         {
             "nombre": "Super Naturista",
             "logo": "logos/superNaturista_logo.png",
-            "categoria": "Productos naturales y bienestar"
+            "categoria": "Productos naturales y bienestar",
+            "imagenes_referencia": [
+                "logos/superNaturista_1.png",
+                "logos/supernaturista_2.png"
+            ]
         },
         {
             "nombre": "Nike",
@@ -102,27 +140,46 @@
         {
             "nombre": "Exakta Laboratorios",
             "logo": "logos/exakta_logo.png",
-            "categoria": "Salud"
+            "categoria": "Salud",
+            "imagenes_referencia": [
+                "logos/exakta_1.png"
+            ]
         },
         {
             "nombre": "Valdez Baluarte",
             "logo": "logos/valdezBaluarte_logo.png",
-            "categoria": "Muebleria"
+            "categoria": "Muebleria",
+            "imagenes_referencia": [
+                "logos/valdezBaluarte_1.png",
+                "logos/valdezBaluarte_2.png"
+            ]
         },
         {
             "nombre": "Kinezis Fun",
             "logo": "logos/kinezis_logo.png",
-            "categoria": "Deportes"
+            "categoria": "Deportes",
+            "imagenes_referencia": [
+                "logos/kinezis_1.png",
+                "logos/kinezis_2.png",
+                "logos/kinezis_3.png"
+            ]
         },
         {
             "nombre": "Bou Café",
             "logo": "logos/BouCafe_logo.png",
-            "categoria": "Restaurantes Cafeteria"
+            "categoria": "Restaurantes Cafeteria",
+            "imagenes_referencia": [
+                "logos/bou_cafe_1.png",
+                "logos/bouCafe_2.png"
+            ]
         },
         {
             "nombre": "Asador KM 11.8",
             "logo": "logos/asadorKM11_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Restaurantes",
+            "imagenes_referencia": [
+                "logos/asadorKM11_1.png"
+            ]
         },
         {
             "nombre": "Innovasport",
@@ -132,12 +189,19 @@
         {
             "nombre": "BigBox",
             "logo": "logos/bigbox_logo.png",
-            "categoria": "Regalos"
+            "categoria": "Regalos",
+            "imagenes_referencia": [
+                "logos/bigbox_1.png",
+                "logos/bigBox_2.png"
+            ]
         },
         {
             "nombre": "Meroma",
             "logo": "logos/meroma_logo.png",
-            "categoria": "Restaurantes"
+            "categoria": "Restaurantes",
+            "imagenes_referencia": [
+                "logos/meroma_1.png"
+            ]
         },
         {
             "nombre": "El Tizoncito",
@@ -162,7 +226,10 @@
         {
             "nombre": "weloveburgers",
             "logo": "logos/weLoveBurgers_logo.png",
-            "categoria": "Restaurantes Hamburguesas"
+            "categoria": "Restaurantes Hamburguesas",
+            "imagenes_referencia": [
+                "logos/fatburger_1.png"
+            ]
         },
         {
             "nombre": "La Casa de Toño",
@@ -172,17 +239,27 @@
         {
             "nombre": "Click Bus",
             "logo": "logos/clicBus_logo.png",
-            "categoria": "Viajes"
+            "categoria": "Viajes",
+            "imagenes_referencia": [
+                "logos/clickBus_1.png"
+            ]
         },
         {
             "nombre": "Diri Telecomunicaciones",
             "logo": "logos/diriTelecomunicaciones_logo.png",
-            "categoria": "Servicios Telefonia"
+            "categoria": "Servicios Telefonia",
+            "imagenes_referencia": [
+                "logos/DiriTelecomunicaciones_1.png"
+            ]
         },
         {
             "nombre": "Jüsto",
             "logo": "logos/Justo_logo.png",
-            "categoria": "Supermercado en linea"
+            "categoria": "Supermercado en linea",
+            "imagenes_referencia": [
+                "logos/justo_1.png",
+                "logos/justo_2.png"
+            ]
         },
         {
             "nombre": "Booking",
@@ -207,12 +284,18 @@
         {
             "nombre": "Mobbit",
             "logo": "logos/mobbit_logo.png",
-            "categoria": "Servicios Mudanza"
+            "categoria": "Servicios Mudanza",
+            "imagenes_referencia": [
+                "logos/mobbit_1.png"
+            ]
         },
         {
             "nombre": "Hacienda 1800",
             "logo": "logos/hacienda1800_logo.png",
-            "categoria": "Viajes Hotel"
+            "categoria": "Viajes Hotel",
+            "imagenes_referencia": [
+                "logos/hacienda1800_1.png"
+            ]
         },
         {
             "nombre": "Stradivarius",
