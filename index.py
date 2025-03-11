@@ -150,7 +150,7 @@ def generar_imagen_stability(texto_prompt, imagenes_referencia, imagenes_subidas
     data = {
         "prompt": texto_prompt,
         "mode": "image-to-image" if files else "text-to-image",
-        "strength": "0.75" if files else "",  # Solo se usa en image-to-image
+        "strength": "1" if files else "",  # Solo se usa en image-to-image
         "output_format": "png",
     }
 
