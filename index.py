@@ -120,7 +120,7 @@ def generar_copy(comercio, recompensa_bienvenida, recompensa_recurrente, categor
     copies = response.choices[0].message.content.strip().split("\n")
     return [copy.strip()[:limite_caracteres] for copy in copies if copy.strip()][:3]
 
-
+# 👩🏽‍💻 prompt solicitado para Stability
 def generar_imagen_stability(texto_prompt, imagenes_referencia, imagenes_subidas):
     api_key = os.getenv("STABILITY_API_KEY")
     url = "https://api.stability.ai/v2beta/stable-image/generate/sd3"
@@ -150,7 +150,7 @@ def generar_imagen_stability(texto_prompt, imagenes_referencia, imagenes_subidas
     data = {
         "prompt": texto_prompt,
         "mode": "image-to-image" if files else "text-to-image",
-        "strength": "1" if files else "",  # Solo se usa en image-to-image
+        "strength": "0.4" if files else "",  # Solo se usa en image-to-image
         "output_format": "png",
     }
 
@@ -167,6 +167,36 @@ def generar_imagen_stability(texto_prompt, imagenes_referencia, imagenes_subidas
     else:
         return f"❌ Error en la generación de imágenes: {response.text}"
 
+# 👩🏽‍💻 prompt solicitado para Dalle
+def generar_imagen_dalle(texto_prompt):
+    api_key = os.getenv("OPENAI_API_KEY")
+    url = "https://api.openai.com/v1/images/generations"
+
+    if not texto_prompt or texto_prompt.strip() == "":
+        return "❌ Error: El prompt no puede estar vacío. Por favor, ingresa una descripción."
+
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
+
+    data = {
+        "model": "dall-e-2",  # O puedes probar "dall-e-3"
+        "prompt": texto_prompt,
+        "n": 1,
+        "size": "1024x1024"
+    }
+
+    response = requests.post(url, headers=headers, json=data)
+
+    if response.status_code == 200:
+        try:
+            image_url = response.json()["data"][0]["url"]
+            return image_url
+        except Exception as e:
+            return f"❌ Error al procesar la imagen: {str(e)}"
+    else:
+        return f"❌ Error en la generación de imágenes: {response.text}"
     
 
 # Cargar lista de comercios con logos desde el JSON
@@ -191,7 +221,7 @@ if st.button("🔒 Cerrar sesión", type="secondary"):
     st.session_state["autenticado"] = False
     st.rerun()
 
-tab1, tab2, tab3 = st.tabs(["Copys", "Imágenes", "Pruebas"])
+tab1, tab2, tab3 = st.tabs(["Copys", "Stability", "Dalle"])
 
 with tab1:
     # Extraer solo los nombres de los comercios
@@ -286,3 +316,37 @@ with tab2:
                 )
             else:
                 st.warning("⚠️ No se generó ninguna imagen. Revisa el prompt.")
+
+with tab3:
+    col1, col2 = st.columns([2, 4])  
+
+    with col1:
+        comercio_seleccionado_img_dalle = st.selectbox(
+            "Nombre del comercio", comercio_nombres, key="comercio_imagenes_dalle"
+        )
+        comercio_info_img_dalle = next((c for c in comercios if c["nombre"] == comercio_seleccionado_img_dalle), None)
+        if comercio_info_img_dalle:
+            st.image(comercio_info_img_dalle["logo"], width=100, use_container_width=True)
+
+    with col2:
+        
+        # Campo de texto para descripción
+        descripcion_dalle = st.text_area("📝 Añadir texto descriptivo para la generación de imágenes con DALL·E")
+
+       # Botón para generar imágenes
+        if st.button("🎨 Generar Imagen con DALL·E", type="primary"):
+            with st.spinner("Generando imagen con DALL·E..."):
+                imagen_generada_url = generar_imagen_dalle(descripcion_dalle)
+
+            if isinstance(imagen_generada_url, str) and "❌ Error" in imagen_generada_url:
+                st.error(imagen_generada_url)  # Mostrar mensaje de error
+            else:  # Si se generó correctamente
+                st.image(imagen_generada_url, use_container_width=True)
+
+                # Descargar imagen
+                st.download_button(
+                    label="📥 Descargar Imagen",
+                    data=requests.get(imagen_generada_url).content,
+                    file_name="imagen_generada_dalle.png",
+                    mime="image/png"
+                )
