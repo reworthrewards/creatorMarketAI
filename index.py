@@ -63,9 +63,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Configurar manualmente la clave API (solo para pruebas locales)
-os.environ["OPENAI_API_KEY"] = ""
-os.environ["STABILITY_API_KEY"] = ""
-os.environ["FREEPIK_API_KEY"] = ""
+#os.environ["OPENAI_API_KEY"] = ""
+#os.environ["STABILITY_API_KEY"] = ""
+#os.environ["FREEPIK_API_KEY"] = ""
 
 # Cargar claves desde variables de entorno
 openai_api_key = os.getenv("OPENAI_API_KEY")
