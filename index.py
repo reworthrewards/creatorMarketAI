@@ -154,7 +154,7 @@ def generar_imagen_stability(texto_prompt, imagenes_referencia, imagenes_subidas
     data = {
         "prompt": texto_prompt,
         "mode": "image-to-image" if files else "text-to-image",
-        "strength": "0.4" if files else "",  # Solo se usa en image-to-image
+        "strength": "0.2" if files else "",  # Solo se usa en image-to-image
         "output_format": "png",
     }
 
@@ -185,7 +185,7 @@ def generar_imagen_dalle(texto_prompt):
     }
 
     data = {
-        "model": "dall-e-2",  # O puedes probar "dall-e-3"
+        "model": "dall-e-3",  # O puedes probar "dall-e-3"
         "prompt": texto_prompt,
         "n": 1,
         "size": "1024x1024"
