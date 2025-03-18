@@ -63,19 +63,23 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Configurar manualmente la clave API (solo para pruebas locales)
-#os.environ["OPENAI_API_KEY"] = ""
-#os.environ["STABILITY_API_KEY"] = ""
-
+os.environ["OPENAI_API_KEY"] = ""
+os.environ["STABILITY_API_KEY"] = ""
+os.environ["FREEPIK_API_KEY"] = ""
 
 # Cargar claves desde variables de entorno
 openai_api_key = os.getenv("OPENAI_API_KEY")
 stability_api_key = os.getenv("STABILITY_API_KEY")
+freepik_api_key = os.getenv("FREEPIK_API_KEY")
 
 if not openai_api_key:
     raise ValueError("⚠️ ERROR: No se encontró OPENAI_API_KEY en las variables de entorno.")
 
 if not stability_api_key:
     raise ValueError("⚠️ ERROR: No se encontró STABILITY_API_KEY en las variables de entorno.")
+
+if not freepik_api_key:
+    raise ValueError("⚠️ ERROR: No se encontró FREEPIK_API_KEY en las variables de entorno.")
 
 print("API Key de OpenAI cargada:", openai_api_key)
 print("API Key de Stability AI cargada:", stability_api_key)
@@ -197,7 +201,39 @@ def generar_imagen_dalle(texto_prompt):
             return f"❌ Error al procesar la imagen: {str(e)}"
     else:
         return f"❌ Error en la generación de imágenes: {response.text}"
+
+# 👩🏽‍💻 prompt solicitado para Freepik
+def generar_imagen_freepik(texto_prompt):
+    api_key = os.getenv("FREEPIK_API_KEY")
+    url = "https://api.freepik.com/v1/ai/mystic"
+
+    if not texto_prompt or texto_prompt.strip() == "":
+        return "❌ Error: El prompt no puede estar vacío."
+
+    headers = {
+        "x-freepik-api-key": api_key, 
+        "Content-Type": "application/json",
+    }
+
+    data = {
+        "prompt": texto_prompt,
+        "n": 1,
+        "size": "1024x1024"
+    }
+
+    response = requests.post(url, headers=headers, json=data)
+    print("🔍 Código de respuesta:", response.status_code)
     
+    if response.status_code == 200:
+        try:
+            respuesta_json = response.json()
+            print("📩 Respuesta JSON:", respuesta_json)  # Debugging
+            image_url = respuesta_json["data"][0]["url"]
+            return image_url
+        except KeyError:
+            return f"❌ Error al procesar la imagen: {respuesta_json}"
+    else:
+        return f"❌ Error en la generación de imágenes: {response.text}"
 
 # Cargar lista de comercios con logos desde el JSON
 try:
@@ -221,7 +257,7 @@ if st.button("🔒 Cerrar sesión", type="secondary"):
     st.session_state["autenticado"] = False
     st.rerun()
 
-tab1, tab2, tab3 = st.tabs(["Copys", "Stability", "Dalle"])
+tab1, tab2, tab3, tab4 = st.tabs(["Copys", "Stability", "Dalle", "Freepik"])
 
 with tab1:
     # Extraer solo los nombres de los comercios
@@ -348,5 +384,38 @@ with tab3:
                     label="📥 Descargar Imagen",
                     data=requests.get(imagen_generada_url).content,
                     file_name="imagen_generada_dalle.png",
+                    mime="image/png"
+                )
+
+with tab4:
+    col1, col2 = st.columns([2, 4])
+    with col1:
+        comercio_seleccionado_img_freepik = st.selectbox(
+            "Nombre del comercio", comercio_nombres, key="comercio_imagenes_freepik"
+        )
+        comercio_info_img_freepik = next((c for c in comercios if c["nombre"] == comercio_seleccionado_img_freepik), None)
+        if comercio_info_img_freepik:
+            st.image(comercio_info_img_freepik["logo"], width=100, use_container_width=True)
+
+    with col2:
+
+        # Campo de texto para ingresar la descripción de la imagen
+        descripcion_freepik = st.text_area("📝 Añadir descripción para generar la imagen con Freepik")
+
+        # Botón para generar imágenes
+        if st.button("🎨 Generar Imagen con Freepik", type="primary"):
+            with st.spinner("Generando imagen con Freepik..."):
+                imagen_generada_url = generar_imagen_freepik(descripcion_freepik)
+
+            if isinstance(imagen_generada_url, str) and "❌ Error" in imagen_generada_url:
+                st.error(imagen_generada_url)  # Mostrar mensaje de error
+            else:  # Si se generó correctamente
+                st.image(imagen_generada_url, use_column_width=True)
+
+                # Descargar imagen
+                st.download_button(
+                    label="📥 Descargar Imagen",
+                    data=requests.get(imagen_generada_url).content,
+                    file_name="imagen_generada_freepik.png",
                     mime="image/png"
                 )
