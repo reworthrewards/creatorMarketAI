@@ -169,7 +169,7 @@ def generar_copy(comercio, recompensa_bienvenida, recompensa_recurrente, categor
         return f"❌ Error en la generación de imágenes: {response.text}"#
 
 
-def generar_imagen_stability(texto_prompt):
+def generar_imagen_stability(texto_prompt, imagenes_referencia=None, imagenes_subidas=None):
     api_key = os.getenv("STABILITY_API_KEY")
     url = "https://api.stability.ai/v2beta/stable-image/generate/sd3"
 
@@ -181,17 +181,35 @@ def generar_imagen_stability(texto_prompt):
         "Accept": "image/*"
     }
 
-    # Stability AI requiere que los datos estén en `multipart/form-data`
+    files = {}
+    modo = "text-to-image"  # Por defecto, usar solo texto
+
+    # Verificar si hay imágenes (referencia o subidas)
+    tiene_imagenes = (imagenes_referencia and len(imagenes_referencia) > 0) or (imagenes_subidas and len(imagenes_subidas) > 0)
+
+    if tiene_imagenes:
+        modo = "image-to-image"
+
+        if imagenes_referencia:
+            ref_image_path = imagenes_referencia[0]
+            with open(ref_image_path, "rb") as img_file:
+                files["image"] = ("image.png", img_file.read(), "image/png")
+
+        if imagenes_subidas:
+            uploaded_img = imagenes_subidas[0]
+            files["image"] = (uploaded_img.name, uploaded_img.getvalue(), uploaded_img.type)
+
     data = {
-        "prompt": texto_prompt,
-        "mode": "text-to-image",
-        "output_format": "png"
+    "prompt": texto_prompt,
+    "mode": modo,
+    "output_format": "png"
     }
 
-    # Debe enviarse como `multipart/form-data`, aunque no haya imágenes
-    files = {"none": ""}
+    # Solo agregar "strength" si el modo es "image-to-image"
+    if modo == "image-to-image":
+        data["strength"] = "0.8"
 
-    response = requests.post(url, headers=headers, files=files, data=data)
+    response = requests.post(url, headers=headers, files=files if modo == "image-to-image" else {"none": ""}, data=data)
 
     print("\n🔍 Código de respuesta:", response.status_code)
 
@@ -203,7 +221,6 @@ def generar_imagen_stability(texto_prompt):
             return f"❌ Error al procesar la imagen: {str(e)}"
     else:
         return f"❌ Error en la generación de imágenes: {response.text}"
-
 
 # 👩🏽‍💻 prompt solicitado para Dalle
 def generar_imagen_dalle(texto_prompt):
@@ -366,9 +383,18 @@ with tab2:
        # Botón para generar imágenes
         if st.button("🎨 Generar Imagen", type="primary"):
             with st.spinner("Generando imagen..."):
-                #imagen_generada = generar_imagen_stability(descripcion, imagenes_referencia, imagenes_subidas)
-                imagen_generada = generar_imagen_stability(descripcion)
 
+                # Verificar si hay imágenes de referencia y subidas
+                tiene_referencia = imagenes_referencia and len(imagenes_referencia) > 0
+                tiene_subidas = imagenes_subidas and len(imagenes_subidas) > 0
+
+                # Si no hay imágenes, solo enviamos el prompt (text-to-image)
+                if not tiene_referencia and not tiene_subidas:
+                    imagen_generada = generar_imagen_stability(descripcion)
+                else:
+                    imagen_generada = generar_imagen_stability(descripcion, imagenes_referencia, imagenes_subidas)
+
+            # Manejo de la imagen generada
             if isinstance(imagen_generada, str) and "❌ Error" in imagen_generada:
                 st.error(imagen_generada)  # Mostrar mensaje de error
             elif isinstance(imagen_generada, Image.Image):  # Si se generó correctamente
