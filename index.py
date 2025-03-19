@@ -125,7 +125,7 @@ def generar_copy(comercio, recompensa_bienvenida, recompensa_recurrente, categor
     return [copy.strip()[:limite_caracteres] for copy in copies if copy.strip()][:3]
 
 # 👩🏽‍💻 prompt solicitado para Stability
-def generar_imagen_stability(texto_prompt, imagenes_referencia, imagenes_subidas):
+# def generar_imagen_stability(texto_prompt, imagenes_referencia, imagenes_subidas):
     api_key = os.getenv("STABILITY_API_KEY")
     url = "https://api.stability.ai/v2beta/stable-image/generate/sd3"
 
@@ -139,22 +139,19 @@ def generar_imagen_stability(texto_prompt, imagenes_referencia, imagenes_subidas
 
     files = {}
 
-    # Procesar imágenes de referencia si existen
     if imagenes_referencia:
-        ref_image_path = imagenes_referencia[0]  # Tomamos solo una imagen de referencia
+        ref_image_path = imagenes_referencia[0] 
         with open(ref_image_path, "rb") as img_file:
             files["image"] = ("image.png", img_file.read(), "image/png")
 
-    # Procesar imágenes subidas por el usuario
     if imagenes_subidas:
-        uploaded_img = imagenes_subidas[0]  # Tomamos solo una imagen subida
+        uploaded_img = imagenes_subidas[0]  
         files["image"] = (uploaded_img.name, uploaded_img.getvalue(), uploaded_img.type)
 
-    # Parámetros de la solicitud
     data = {
         "prompt": texto_prompt,
         "mode": "image-to-image" if files else "text-to-image",
-        "strength": "0.2" if files else "",  # Solo se usa en image-to-image
+        "strength": "0.2" if files else "", 
         "output_format": "png",
     }
 
@@ -169,7 +166,44 @@ def generar_imagen_stability(texto_prompt, imagenes_referencia, imagenes_subidas
         except Exception as e:
             return f"❌ Error al procesar la imagen: {str(e)}"
     else:
+        return f"❌ Error en la generación de imágenes: {response.text}"#
+
+
+def generar_imagen_stability(texto_prompt):
+    api_key = os.getenv("STABILITY_API_KEY")
+    url = "https://api.stability.ai/v2beta/stable-image/generate/sd3"
+
+    if not texto_prompt or texto_prompt.strip() == "":
+        return "❌ Error: El prompt no puede estar vacío. Por favor, ingresa una descripción."
+
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Accept": "image/*"
+    }
+
+    # Stability AI requiere que los datos estén en `multipart/form-data`
+    data = {
+        "prompt": texto_prompt,
+        "mode": "text-to-image",
+        "output_format": "png"
+    }
+
+    # Debe enviarse como `multipart/form-data`, aunque no haya imágenes
+    files = {"none": ""}
+
+    response = requests.post(url, headers=headers, files=files, data=data)
+
+    print("\n🔍 Código de respuesta:", response.status_code)
+
+    if response.status_code == 200:
+        try:
+            image = Image.open(io.BytesIO(response.content))
+            return image
+        except Exception as e:
+            return f"❌ Error al procesar la imagen: {str(e)}"
+    else:
         return f"❌ Error en la generación de imágenes: {response.text}"
+
 
 # 👩🏽‍💻 prompt solicitado para Dalle
 def generar_imagen_dalle(texto_prompt):
@@ -332,7 +366,8 @@ with tab2:
        # Botón para generar imágenes
         if st.button("🎨 Generar Imagen", type="primary"):
             with st.spinner("Generando imagen..."):
-                imagen_generada = generar_imagen_stability(descripcion, imagenes_referencia, imagenes_subidas)
+                #imagen_generada = generar_imagen_stability(descripcion, imagenes_referencia, imagenes_subidas)
+                imagen_generada = generar_imagen_stability(descripcion)
 
             if isinstance(imagen_generada, str) and "❌ Error" in imagen_generada:
                 st.error(imagen_generada)  # Mostrar mensaje de error
