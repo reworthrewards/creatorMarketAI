@@ -308,7 +308,7 @@ if st.button("🔒 Cerrar sesión", type="secondary"):
     st.session_state["autenticado"] = False
     st.rerun()
 
-tab1, tab2, tab3, tab4 = st.tabs(["Copys", "Stability", "Dalle", "Freepik"])
+tab1, tab2, tab3, tab4 = st.tabs(["Copys", "Stability", "Open IA", "Freepik"])
 
 with tab1:
     # Extraer solo los nombres de los comercios
@@ -415,53 +415,32 @@ with tab2:
                 st.warning("⚠️ No se generó ninguna imagen. Revisa el prompt.")
 
 with tab3:
-    col1, col2 = st.columns([2, 4])  
 
-    with col1:
-        comercio_seleccionado_img_dalle = st.selectbox(
-            "Nombre del comercio", comercio_nombres, key="comercio_imagenes_dalle"
-        )
-        comercio_info_img_dalle = next((c for c in comercios if c["nombre"] == comercio_seleccionado_img_dalle), None)
-        if comercio_info_img_dalle:
-            st.image(comercio_info_img_dalle["logo"], width=100, use_container_width=True)
+    # Campo de texto para descripción
+    descripcion_dalle = st.text_area("📝 Añadir prompt para generar la imagen con Open IA")
 
-    with col2:
-        
-        # Campo de texto para descripción
-        descripcion_dalle = st.text_area("📝 Añadir texto descriptivo para la generación de imágenes con DALL·E")
+    # Botón para generar imágenes
+    if st.button("🎨 Generar Imagen con Open IA", type="primary"):
+        with st.spinner("Generando imagen con Open IA..."):
+            imagen_generada_url = generar_imagen_dalle(descripcion_dalle)
 
-       # Botón para generar imágenes
-        if st.button("🎨 Generar Imagen con DALL·E", type="primary"):
-            with st.spinner("Generando imagen con DALL·E..."):
-                imagen_generada_url = generar_imagen_dalle(descripcion_dalle)
+        if isinstance(imagen_generada_url, str) and "❌ Error" in imagen_generada_url:
+            st.error(imagen_generada_url)  # Mostrar mensaje de error
+        else:  # Si se generó correctamente
+            st.image(imagen_generada_url, use_container_width=True)
 
-            if isinstance(imagen_generada_url, str) and "❌ Error" in imagen_generada_url:
-                st.error(imagen_generada_url)  # Mostrar mensaje de error
-            else:  # Si se generó correctamente
-                st.image(imagen_generada_url, use_container_width=True)
-
-                # Descargar imagen
-                st.download_button(
-                    label="📥 Descargar Imagen",
-                    data=requests.get(imagen_generada_url).content,
-                    file_name="imagen_generada_dalle.png",
-                    mime="image/png"
-                )
+            # Descargar imagen
+            st.download_button(
+                label="📥 Descargar Imagen",
+                data=requests.get(imagen_generada_url).content,
+                file_name="imagen_generada_dalle.png",
+                mime="image/png"
+            )
 
 with tab4:
-    col1, col2 = st.columns([2, 4])
-    with col1:
-        comercio_seleccionado_img_freepik = st.selectbox(
-            "Nombre del comercio", comercio_nombres, key="comercio_imagenes_freepik"
-        )
-        comercio_info_img_freepik = next((c for c in comercios if c["nombre"] == comercio_seleccionado_img_freepik), None)
-        if comercio_info_img_freepik:
-            st.image(comercio_info_img_freepik["logo"], width=100, use_container_width=True)
-
-    with col2:
-
+    with st.container():
         # Campo de texto para ingresar la descripción de la imagen
-        descripcion_freepik = st.text_area("📝 Añadir descripción para generar la imagen con Freepik")
+        descripcion_freepik = st.text_area("📝 Añadir prompt para generar la imagen con Freepik")
 
         # Botón para generar imágenes
         if st.button("🎨 Generar Imagen con Freepik", type="primary"):
