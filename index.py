@@ -13,8 +13,8 @@ load_dotenv(find_dotenv())
 
 #🎨 Favicon + title
 st.set_page_config(
-    page_title="Creativos | Majo",  
-    page_icon="🎨",
+    page_title="Creator Marketing AI | Reworth Analytics",  
+    page_icon="👾",
 )
 
 # 🚨 Código de acceso predefinido
