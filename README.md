@@ -1,8 +1,8 @@
-# Static Website Deployment
+# Creator Marketing AI
 
-This repository is configured to automatically deploy to AWS S3 using GitHub Actions.
+This repository implements the following APIs to provide copy and image generation for marketing campaigns of our Financial Institutions to communicate affiliated merchants.
 
-## Setup Instructions
+## Deployment Instructions
 
 1. Create an S3 bucket in AWS:
    - Go to AWS S3 console
@@ -28,16 +28,10 @@ This repository is configured to automatically deploy to AWS S3 using GitHub Act
    - The workflow will automatically trigger when you push to the main branch
    - You can monitor the deployment in the Actions tab of your repository
 
-## Manual Deployment
+## Manual Deployment (Using AWS CLI)
 
 If you need to deploy manually, you can use the AWS CLI:
 
 ```bash
 aws s3 sync . s3://your-bucket-name --delete
 ```
-
-## Notes
-
-- Make sure your S3 bucket is configured for static website hosting
-- The website will be available at: `http://your-bucket-name.s3-website-region.amazonaws.com`
-- Consider setting up CloudFront for HTTPS and better performance 
