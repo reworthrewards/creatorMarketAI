@@ -6,6 +6,10 @@ import requests
 from PIL import Image
 import io
 import base64
+from dotenv import load_dotenv, find_dotenv
+
+# load .env into os.environ
+load_dotenv(find_dotenv())
 
 #🎨 Favicon + title
 st.set_page_config(
